@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Quản Lý Bán Hàng</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+        </div>
+        <div class="menu">
+
+            <li><a href="">DANH MỤC SẢN PHẨM</a>
+                <ul class="sub-menu">
+                    <li><a href="">Hàng tươi sống</a>
+                        <ul>
+                            <li><a href="">Hàng tươi sống </a></li>
+                            <li><a href="">Rau củ quả </a></li>
+                            <li><a href="">Thịt bò </a></li>
+                            <li><a href="">Thịt gà </a></li>
+                            <li><a href="">Thịt heo </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Đồ dùng gia đình</a>
+                        <ul>
+                            <li><a href="">Sữa tắm </a></li>
+                            <li><a href="">Dầu gội</a></li>
+                            <li><a href="">Gia vị</a></li>
+                            <li><a href="">Bột giặt</a></li>
+                            <li><a href="">Đồ nhà bếp</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Bánh kẹo </a></li>
+                    <li><a href="">Sản phẩm mẹ và bé </a></li>
+                    <li><a href="">Đồ dùng vệ sinh </a></li>
+
+                </ul>
+            </li>
+            <li><a href="">NHẬP XUẤT SẢN PHẨM</a></li>
+            <li><a href="">NHÀ CUNG CẤP</a></li>
+            <li><a href="">GIỎ HÀNG</a></li>
+            <li><a href="">ĐƠN HÀNG</a></li>
+
+        </div>
+        <div class="others">
+
+            <li><input placeholder="Search" type="text"><i class="fas fa-search"></i></li>
+            <li>
+                <a class="fas fa-archive" href=""></a>
+            </li>
+            <li>
+                <a class="fa fa-user" href=""></a>
+            </li>
+            <li>
+                <a class="fa fa-shopping-bag" href=""></a>
+            </li>
+        </div>
+    </header>
+    <section id="Slider">
+        <div class="aspect-ratio-169">
+            <img src="nha kho1.jpg">
+            <img src="nha kho2.jpg">
+            <img src="nha kho3.jpg">
+            <img src="nha kho4.jpg">
+            <img src="nha kho5.jpg">
+        </div>
+        <div class="dot-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+    <section class="app-container">
+        <p>Tải ứng dụng quản lý kho hàng</p>
+        <div class="app-google">
+            <a href="https://www.youtube.com/" target="_blank"><img src="appstore.png"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="chplay.svg"></a>
+        </div>
+        <p>Nhận thông tin sản phẩm mới</p>
+        <input type="text" placeholder="Nhập email của bạn...">
+
+    </section>
+</body>
+<script>
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
+    const imgContainer = document.querySelector(".aspect-ratio-169");
+    const dotItem = document.querySelectorAll(".dot");
+    let imgNumber = imgPosition.length;
+    let index = 0;
+    // console.log(imgPosition)
+    imgPosition.forEach(function(image, index) {
+        image.style.left = index * 100 + "% "
+        dotItem[index].addEventListener("click", function() {
+            slider(index);
+        });
+    });
+
+    function imgSlide() {
+        index++;
+        if (index >= imgNumber) {
+            index = 0;
+        }
+        slider(index);
+    }
+
+    function slider(index) {
+        imgContainer.style.left = "-" + index * 100 + "% ";
+        const dotActive = document.querySelector('.active');
+        if (dotActive) {
+            dotActive.classList.remove("active");
+        }
+        dotItem[index].classList.add("active");
+
+    }
+    setInterval(imgSlide, 5000);
+</script>
+
+</html>
