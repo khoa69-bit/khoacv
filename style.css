@@ -105,7 +105,7 @@ header {
     display: block;
     position: relative;
     padding-top: 50%;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .aspect-ratio-169 img {
