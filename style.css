@@ -78,6 +78,27 @@ header {
 
 .others>li {
     padding: 40px 15px;
+    position: relative;
+}
+
+.others>li ::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 30%;
+    background-color: #cccccc;
+    position: absolute;
+    right: 0;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.others>li:last-child ::after {
+    display: none;
+}
+
+.others>li:first-child ::after {
+    display: none;
 }
 
 .others>li:first-child {
@@ -97,8 +118,9 @@ header {
 
 #Slider {
     padding-bottom: 30px;
-    border-bottom: 2px soild #333;
+    /* margin: 0 0 50px 50px; */
     overflow: hidden;
+    width: 100%;
 }
 
 .aspect-ratio-169 {
@@ -111,10 +133,11 @@ header {
 .aspect-ratio-169 img {
     display: block;
     position: absolute;
-    width: 100%;
+    width: 95%;
     height: 100%;
     top: 40px;
-    left: 0;
+    /* left: 50px; */
+    margin-left: 40 px;
 }
 
 .dot-container {
